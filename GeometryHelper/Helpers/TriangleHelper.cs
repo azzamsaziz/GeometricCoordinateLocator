@@ -13,6 +13,11 @@ namespace GeometryHelper
 
         public static IEnumerable<Coordinate> GetCoordinates(int row, int column)
         {
+            if (row <= 0)
+                throw new ArgumentException($"The parameter {nameof(row)} is not valid. Please provide a positive integer.");
+            else if (column <= 0)
+                throw new ArgumentException($"The parameter {nameof(column)} is not valid. Please provide a positive integer.");
+
             // Top
             var topEdge = new Coordinate
             {

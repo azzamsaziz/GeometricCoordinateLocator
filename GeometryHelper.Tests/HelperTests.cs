@@ -1,4 +1,5 @@
 using GeometryHelper.Tests.TestData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -44,14 +45,15 @@ namespace GeometryHelper.Tests
             }
         }
 
-        [Fact]
-        public void GetCoordinates_GivenInvalidRowAndColumn_ThrowsException()
+        [Theory]
+        [InlineData(0, 1)]
+        [InlineData(-1, 1)]
+        [InlineData(1, 0)]
+        [InlineData(1, -1)]
+        public void GetCoordinates_GivenInvalidRowOrColumn_ThrowsException(int row, int column)
         {
-            // Arrange
-
             // Act
-
-            // Assert
+            Assert.Throws<ArgumentException>(() => TriangleHelper.GetCoordinates(row, column));
         }
     }
 }
