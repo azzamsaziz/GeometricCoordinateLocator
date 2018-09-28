@@ -19,14 +19,12 @@ namespace GeometryHelper.Tests
             // Assert
         }
 
-        [Fact]
-        public void GetTriangle_GivenInvalidCoordinates_ThrowsException()
+        [Theory]
+        [ClassData(typeof(GetInvalidTriangleTestData))]
+        public void GetTriangle_GivenInvalidCoordinates_ThrowsArgumentException(IEnumerable<Coordinate> coordinates)
         {
-            // Arrange
-
-            // Act
-
-            // Assert
+            // Act - Assert
+            Assert.Throws<ArgumentException>(() => TriangleHelper.GetTriangle(coordinates));
         }
 
         [Theory]
@@ -50,9 +48,9 @@ namespace GeometryHelper.Tests
         [InlineData(-1, 1)]
         [InlineData(1, 0)]
         [InlineData(1, -1)]
-        public void GetCoordinates_GivenInvalidRowOrColumn_ThrowsException(int row, int column)
+        public void GetCoordinates_GivenInvalidRowOrColumn_ThrowsArgumentException(int row, int column)
         {
-            // Act
+            // Act - Assert
             Assert.Throws<ArgumentException>(() => TriangleHelper.GetCoordinates(row, column));
         }
     }
