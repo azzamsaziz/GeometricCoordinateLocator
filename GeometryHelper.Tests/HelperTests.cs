@@ -1,5 +1,6 @@
 using GeometryHelper.Tests.TestData;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace GeometryHelper.Tests
@@ -28,14 +29,19 @@ namespace GeometryHelper.Tests
         }
 
         [Theory]
-        [ClassData(typeof(GetCoordinatesData))]
+        [ClassData(typeof(GetCoordinatesTestData))]
         public void GetCoordinates_GivenRowAndColumn_ReturnsCoordinates(int row, int column, ICollection<Coordinate> expectedCoordinates)
         {
             // Act
-            var result = Helper.GetCoordinates(row, column);
+            var result = TriangleHelper.GetCoordinates(row, column);
 
             // Assert
-            Assert.Equal(expectedCoordinates, result);
+            Assert.Equal(expectedCoordinates.Count, result.Count());
+            for (int i = 0; i < expectedCoordinates.Count; i++)
+            {
+                Assert.Equal(expectedCoordinates.ElementAt(i).X, result.ElementAt(i).X);
+                Assert.Equal(expectedCoordinates.ElementAt(i).Y, result.ElementAt(i).Y);
+            }
         }
 
         [Fact]

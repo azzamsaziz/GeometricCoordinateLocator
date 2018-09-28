@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GeometryHelper.Tests.TestData
 {
-    public class GetCoordinatesData : IEnumerable<object[]>
+    public class GetCoordinatesTestData : IEnumerable<object[]>
     {
         // The data coordinates are put as TOP, RIGHT, then LEFT edge
         public IEnumerator<object[]> GetEnumerator()
@@ -68,7 +68,7 @@ namespace GeometryHelper.Tests.TestData
                 new Coordinate
                 {
                     X = 20,
-                    Y = 10
+                    Y = 0
                 },
                 new Coordinate
                 {
