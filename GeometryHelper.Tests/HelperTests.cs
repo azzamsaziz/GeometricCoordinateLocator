@@ -10,13 +10,14 @@ namespace GeometryHelper.Tests
     {
         [Theory]
         [ClassData(typeof(GetTriangleTestData))]
-        public void GetTriangle_GivenCoordinates_ReturnsTriangles(ICollection<Coordinate> coordinates)
+        public void GetTriangle_GivenCoordinates_ReturnsTriangles(ICollection<Coordinate> coordinates, int row, int column)
         {
-            // Arrange
-
             // Act
+            var result = TriangleHelper.GetTriangle(coordinates);
 
             // Assert
+            Assert.Equal(row, result.Row);
+            Assert.Equal(column, result.Column);
         }
 
         [Theory]

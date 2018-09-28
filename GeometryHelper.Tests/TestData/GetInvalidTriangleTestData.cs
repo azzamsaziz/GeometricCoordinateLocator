@@ -17,30 +17,8 @@ namespace GeometryHelper.Tests.TestData
                 {
                     new Coordinate
                     {
-                        X = 0,
-                        Y = 1
-                    }
-                }
-            };
-            yield return new object[]
-            {
-                new List<Coordinate>
-                {
-                    new Coordinate
-                    {
                         X = -1,
                         Y = 1
-                    }
-                }
-            };
-            yield return new object[]
-            {
-                new List<Coordinate>
-                {
-                    new Coordinate
-                    {
-                        X = 1,
-                        Y = 0
                     }
                 }
             };
