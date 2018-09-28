@@ -8,16 +8,23 @@ namespace GeometricCoordinateLocator.Controllers
     {
         // GET api/coordinates
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            return "API is alive";
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/coordinates/{x}/{y}
+        [HttpGet("{x}/{y}")]
+        public string Get(int x, int y)
         {
-            return "value";
+            return "Get by Coordinate";
+        }
+
+        // GET api/coordinates/{row}/{column}
+        [HttpGet("{row}/{column}")]
+        public string Get(char row, int column)
+        {
+            return "Get by Triangle";
         }
     }
 }
