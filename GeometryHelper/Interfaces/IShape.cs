@@ -12,7 +12,7 @@ namespace GeometryHelper.Interfaces
 
     public interface IShape
     {
-        IList<Coordinate> Coordinates { get; set; }
+        IEnumerable<Coordinate> Coordinates { get; set; }
         ShapeType Shape { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace GeometryHelper.Models
     {
         public int Row { get; set; }
         public int Column { get; set; }
-        public IList<Coordinate> Coordinates { get; set; } = new List<Coordinate>();
+        public IEnumerable<Coordinate> Coordinates { get; set; } = new List<Coordinate>();
         public ShapeType Shape { get; set; } = ShapeType.Triangle;
     }
 }

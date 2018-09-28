@@ -11,10 +11,33 @@ namespace GeometryHelper
         {
             if (coordinates == null || !coordinates.Any())
                 throw new ArgumentException($"The parameter {nameof(coordinates)} is not valid. Please provide a non-empty list of coordinates.");
+            if (coordinates.Count() < 3)
+                throw new ArgumentException($"The parameter {nameof(coordinates)} is not valid. Please provide three coordinates.");
             if (coordinates.Any(coordinate => coordinate.X < 0 || coordinate.Y < 0))
                 throw new ArgumentException($"The parameter {nameof(coordinates)} is not valid. Please provide positive coordinates.");
 
-            return new Triangle();
+            // Facing down
+            if (coordinates.First().Y > coordinates.ElementAt(1).Y)
+            {
+                // Top
+                return new Triangle
+                {
+                    Column = (coordinates.First().X / 5) + 1,
+                    Row = coordinates.First().Y / 10,
+                    Coordinates = coordinates
+                };
+            }
+            else if (coordinates.First().Y < coordinates.ElementAt(1).Y) // Facing up
+            {
+                return new Triangle
+                {
+                    Column = coordinates.First().X / 5,
+                    Row = (coordinates.First().Y / 10) + 1,
+                    Coordinates = coordinates
+                };
+            }
+
+            throw new InvalidOperationException("The coordinates provided are not valid.");
         }
 
         public static IEnumerable<Coordinate> GetCoordinates(int row, int column)

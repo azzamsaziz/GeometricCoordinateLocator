@@ -19,6 +19,16 @@ namespace GeometryHelper.Tests.TestData
                     {
                         X = -1,
                         Y = 1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
                     }
                 }
             };
@@ -30,6 +40,85 @@ namespace GeometryHelper.Tests.TestData
                     {
                         X = 1,
                         Y = -1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
+                    }
+                }
+            };
+            yield return new object[]
+            {
+                new List<Coordinate>
+                {
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = -1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
+                    }
+                }
+            };
+            yield return new object[]
+            {
+                new List<Coordinate>
+                {
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = -1
+                    }
+                }
+            };
+            yield return new object[]
+            {
+                new List<Coordinate>
+                {
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = -1
+                    }
+                }
+            };
+            yield return new object[]
+            {
+                new List<Coordinate>
+                {
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = -1
+                    },
+                    new Coordinate
+                    {
+                        X = 1,
+                        Y = 1
                     }
                 }
             };
